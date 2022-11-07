@@ -1,0 +1,51 @@
+html,
+body {
+  height: 100%;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background: #1d1f20;
+}
+
+#box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  padding: 5rem;
+  color: white;
+  /* border-radius: 1rem; */
+  /*this will round it from inner side */
+  font-family: "SansSerif", "Helvetica Neue", Helvetica, Arial, sans;
+  background: #000;
+}
+.gradient-border {
+  /* _________________________Increase border with if you want to making full raduis rounded */
+  --borderWidth: 3px;
+  background: #1d1f20;
+
+  position: relative;
+  border-radius: var(--borderWidth);
+}
+
+.gradient-border:after {
+  content: "";
+  position: absolute;
+  top: calc(-1 * var(--borderWidth));
+  left: calc(-1 * var(--borderWidth));
+  height: calc(100% + var(--borderWidth) * 2);
+  width: calc(100% + var(--borderWidth) * 2);
+  background: linear-gradient(
+    96.24deg,
+    #276ea3 0.15%,
+    #0fb3c5 49.29%,
+    #0cc77d 98.43%
+  );
+  /* Increase this after increasing --borderWidth */
+  border-radius: calc(2 * var(--borderWidth));
+  z-index: -1;
+  background-size: 100% 100%;
+}
